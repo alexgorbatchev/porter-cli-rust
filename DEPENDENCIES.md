@@ -17,7 +17,7 @@ status: current
 
 The direct dependencies use MIT, MIT/Apache-2.0, or compatible Rustix license options. The Go MIT notice is retained. APIs were checked in downloaded source and official [sock_diag](https://github.com/rust-netlink/netlink-packet-sock-diag), [Ratatui](https://ratatui.rs/tutorials/counter-app/basic-app/), and [pidfd_send_signal](https://docs.rs/rustix/1.1.5/rustix/process/fn.pidfd_send_signal.html) documentation.
 
-Tests reuse the complete, patched portable-pty source owned by the sibling tui-frame project. Its [provenance and native descriptor fixes](../tui-frame/DEPENDENCIES.md) apply here too. Runtime binaries do not depend on portable-pty or vt100. No custom terminal emulator or socket protocol layout is implemented.
+Tests reuse the complete, patched portable-pty source owned by the revision-pinned tui-frame Git dependency. Its [provenance and native descriptor fixes](https://github.com/alexgorbatchev/tui-frame-rust/blob/main/DEPENDENCIES.md) apply here too. Runtime binaries do not depend on portable-pty or vt100. No custom terminal emulator or socket protocol layout is implemented.
 
 # Corrected source behavior
 
