@@ -224,10 +224,7 @@ fn metadata_and_terminal_validation_work_in_both_modes() {
             invoke(&["porter", "--version"], false, mode),
             (0, "0.1.0\n".into(), String::new())
         );
-        assert_eq!(
-            invoke(&["porter", "skill"], false, mode).1,
-            help_options().skill.unwrap()
-        );
+        assert_eq!(invoke(&["porter", "skill"], false, mode).1, INSTALL_TEXT);
         assert_eq!(invoke(&["porter"], false, mode).0, 1);
         for args in [
             vec!["porter", "--help"],
@@ -545,3 +542,5 @@ fn native_netlink_decoding_rejects_partial_and_failed_dumps() {
     bytes.truncate(bytes.len() - 1);
     assert!(apply_datagram(&bytes, 3, &mut listeners).is_err());
 }
+
+const INSTALL_TEXT: &str = "Install the porter skill using the Skills CLI:\n\n  npx skills add alexgorbatchev/porter --skill porter\n\nSkill:\n\n  https://github.com/alexgorbatchev/porter/tree/main/skills/porter\n";
